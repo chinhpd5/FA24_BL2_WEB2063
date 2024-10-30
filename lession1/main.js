@@ -81,7 +81,52 @@ const isCheck = (1 != true) ? 'Đúng' : 'Sai';
 
 
 // DOM là gì? 5 phút tự tìm hiểu
- 
+// Document Object Model (Mô hình đối tượng tài liệu)
+// 3 thành phần
+
+// 1. Element
+/**
+ * id, class, tag
+ * css selector
+ */
+
+var h1Element = document.getElementById('heading'); // trả về 1 phần tử 
+// console.log(h1Element);
+
+var pElements = document.getElementsByClassName('pragraph');// trả về HTMLCollection: mảng
+// mảng chứa các phần tử có class thỏa mãn điều kiện
+
+pElements= document.getElementsByTagName('p');// trả về HTMLCollection: mảng
+// mảng chứa các phần tử có tag thỏa mãn điều kiện
+
+// console.log(pElements);
+
+// querySelector trả về duy nhất 1 phần tử đầu tiên tìm thấy thỏa mãn ĐK
+var element = document.querySelector('#heading'); //# : id
+var element = document.querySelector('.pragraph'); // . : class
+var element = document.querySelector('h1') // : tag
+// console.log(element);
+
+// querySelectorAll: trả về NodeList: mảng
+// tìm hiểu sự khác nhau giữa NodeList và HTMLCollection
+var elements = document.querySelectorAll('.pragraph');
+// console.log(elements);
+
+// 2. Attribute
+var element1 = document.querySelector('#heading'); //# : id
+
+element1.classList.add('heading-title');
+element1.style.color = 'red';
+element1.setAttribute('data',"chinhpd5");
+// console.log(element1.getAttribute("data"));
+
+// 3. Text
+console.log(element1.textContent);
+console.log(element1.innerText);
+
+element1.innerHTML = '<i>chinhpd5</i>'
+
+// Khi sử dụng DOM làm việc(thêm sửa xóa) các thành phần trong DOM
 
 
 
