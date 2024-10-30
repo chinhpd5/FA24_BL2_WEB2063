@@ -23,7 +23,6 @@ age = 21;
 
 // 1.global scope
 var home = "Hà Nội"; // global var và let giống nhau
-
 {
     // scope con
     // console.log(home);
@@ -45,6 +44,47 @@ function test(){
 }
 
 // console.log(mark);
+
+// Kiểu dữ liệu JS
+/**
+ * 1. Kiểu dữ liệu nguyên thủy
+ * - string: '', "", ``(template string)
+ * - number: 1 -1 1.5
+ * - null
+ * - boolean: true false
+ * - undefined: var a;
+ * - BigInt
+ * - Symbol
+ */
+
+/**
+ * 2. Kiểu dữ liệu phức tạp
+ * - array : mảng
+ * - object
+ */
+
+/**
+ * Toán tử:
+ * Toán tử số học: + - * / ** % ++ --
+ * Toán gán: = +=(i +=3 <=> i = i + 3) -= *= ,...
+ * Toán so sánh: > < == >= <= != ===
+ * Toán tử logic: ! && ||
+ */
+
+// Biểu thức điều kiện
+// if else, switch case, toán tử 3 ngôi
+const isCheck = (1 != true) ? 'Đúng' : 'Sai';
+//  console.log(isCheck);
+
+// Vòng lặp
+// for, while, do while, for in, for of, forEach, map, filter, reduce, some, every
+
+
+// DOM là gì? 5 phút tự tìm hiểu
+ 
+
+
+
 
 
 
