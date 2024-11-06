@@ -74,6 +74,44 @@ function showInfo1({name,age,child:{name: childName}}){
 
 // showInfo1(myObject)
 
+// rest parameter ... : phần còn lại
+
+myArray = [1,2,3,4];
+
+var [a,...rest] = myArray;
+
+// console.log(a);
+// console.log(rest);
+
+myObject = {
+    name: "chinhpd5",
+    age: 20,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+var {name, ...restObj} = myObject;
+
+// console.log(name);
+// console.log(restObj);
+
+sum = (result,...rest)=>{
+    // console.log(rest);
+    // var result = 0;
+    rest.forEach((item)=>{
+        result += item;
+    })
+    return result;
+}
+
+console.log(sum(1,2,3,4,5));
+console.log(sum(1,2,3,4,5,6,7,8,9));
+
+
+
+
+
 
 
 
