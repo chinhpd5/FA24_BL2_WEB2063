@@ -26,6 +26,48 @@ var test = a => `a: ${a}`
 
 // console.log(test(20));
 
+// default parameter: giá trị mặc định của tham số
+function sum(a=0,b=0){
+    return a + b
+}
+
+// console.log(sum(10));
+
+// destructuring
+var myArray = [1,2,3,4];
+
+// console.log(myArray[1]);//2
+var [a,,c,d] = myArray;
+
+// console.log(a);
+// // console.log(b);
+// console.log(c);
+// console.log(d);
+
+var myObject = {
+    name: "chinhpd5",
+    age: 30,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+// console.log(myObject.name);
+
+var {name, age, child: {name: childName}} = myObject;
+
+console.log(name);
+console.log(age);
+console.log(childName);
+
+
+
+
+
+
+
+
+
 
 
 
