@@ -80,8 +80,43 @@ function showInfo2 ({name,age, child:{name : childName}}){
     console.log(childName);
 }
 
-showInfo2(myObject)
+// showInfo2(myObject)
 
+// REST ... : Phần còn lại
+
+myArray = [1,2,3,4];
+
+var [a,...rest] = myArray;
+
+// console.log(a);
+// console.log(rest);
+
+sum = (total,...rest) => {
+    // console.log(total);
+    // console.log(rest);
+   
+    rest.forEach((i)=>{
+        total += i;
+    })
+
+    return total;
+}
+
+// console.log(sum(1,2,3,4));
+// console.log(sum(1,2,3,4,5,6,7,8));
+
+myObject = {
+    name: "chinhpd5",
+    age: 20,
+    child: {
+        name : "chinhpd6"
+    }
+}
+
+var {name,...restObj} = myObject
+
+console.log(name);
+console.log(restObj);
 
 
 
