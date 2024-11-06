@@ -115,8 +115,73 @@ myObject = {
 
 var {name,...restObj} = myObject
 
-console.log(name);
-console.log(restObj);
+// console.log(name);
+// console.log(restObj);
+
+// Spread ... : Phân rã
+
+var arr1 = [1,2]
+var arr2 = [3,4]
+
+var newArr = [...arr1, ...arr2];
+
+// console.log(newArr);
+
+var obj1 = {
+    name1: "chinhpd5"
+}
+
+var obj2 ={
+    name: "chinhpd6",
+    age: 30
+}
+
+var newObj = {...obj1, ...obj2};
+// console.log(newObj);
+
+/**
+ * a = 1; // number - tham trị
+ * b = a; // 1
+ * a = 2; // 2
+ * b // 1
+ */
+
+/**
+ * a = {value: 1}; // object - tham chiếu
+ * b = a; // copy vị trí nhớ của biến a
+ * a.value = 2; // 2
+ * b.value // 2
+ */
+
+// Biến tham trị và biến tham chiếu trong JS
+
+// Biến tham trị (tham về giá trị): string number boolean
+// khi gán 1 biến có kiểu: string number boolean thì sẽ copy giá trị
+
+// Biến tham chiếu ( tham về vị trí nhớ)
+// khi gán 1 biến có kiểu: array object thì sẽ copy vị trí nhớ
+
+var a = {
+    key: 1, 
+    child:{
+        value : 1
+    }
+};
+// var b = {...a}; // spread
+// var {...b} = a; // rest
+// a.child.value = 2;
+
+
+//deepclone
+var b = JSON.parse(JSON.stringify(a));
+// object -(JSON.stringify)> json -(JSON.parse)> object
+a.child.value = 2
+console.log(a);// 2
+console.log(b);// 1
+
+
+
+
 
 
 
