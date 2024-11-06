@@ -105,8 +105,69 @@ sum = (result,...rest)=>{
     return result;
 }
 
-console.log(sum(1,2,3,4,5));
-console.log(sum(1,2,3,4,5,6,7,8,9));
+// console.log(sum(1,2,3,4,5));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
+
+// spread: ... phân rã mảng hoặc object
+
+var arr1 = [1,2];
+var arr2 = [3,4];
+
+var newArr = [...arr1,...arr2];
+// console.log(newArr);
+
+var obj1 = {
+    name1:"chinhpd5"
+}
+
+var obj2 = {
+    name: "chinhpd6",
+    age: 20
+}
+
+var newObj = {...obj1, ...obj2}
+
+// console.log(newObj);
+var a = 1; // number -> Biến tham trị
+var b = a; //1
+a = 2;
+//b = 1
+
+var a = {value: 1} // object  -> Biến tham chiếu
+var b = a; // gán vị trí ô nhớ của biến a cho biến b
+a.value = 2;
+// b.value = 2
+
+// Biến tham trị và biến tham chiếu
+
+// 1. Biến tham trị:
+// Khi mà copy 1 biến (string number boolean) 
+// thì JS chỉ copy giá trị của biến đó
+
+// 2. Biến tham chiếu:
+// Khi copy(gán) 1 biến (array, object)
+// thí JS gán vị trí nhớ của biến
+
+
+var a = {
+    value: 1,
+    child: {
+        value : 2
+    }
+} // object  -> Biến tham chiếu
+// var b = {...a}; // spread nếu object hoặc array chỉ có 1 cấp
+// var {...b} = a;// rest nếu object hoặc array chỉ có 1 cấp
+var b = JSON.parse(JSON.stringify(a));
+// deep clone // tìm hiểu thêm 
+// object -(JSON.stringify)> JSON -(JSON.parse)> object
+
+a.child.value2 = 2; // thêm 1 phần tử vào a
+
+console.log(a);
+console.log(b);
+
+
+
 
 
 
