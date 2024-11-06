@@ -201,7 +201,7 @@ var myInfo ={
 }
 
 console.log(myInfo.child); // undefined
-console.log(myInfo.child?.name); // undefined
+console.log(myInfo?.child?.name); // undefined
 console.log(123);
 
 
