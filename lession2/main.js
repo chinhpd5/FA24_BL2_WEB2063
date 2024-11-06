@@ -3,7 +3,7 @@
 // 1. declaretion function
 function sayHello(name){
     // logic code
-    return `Xin chào ${name}`;// template string
+    return `Xin chào ${name}`;// template string `` '' ""
 }
 
 const result = sayHello('chinhpd5');
@@ -24,7 +24,65 @@ var sayHello3 = (name)=>{
 // console.log(sayHello3("chinhpd5"));
 
 var test = a => `a: ${a}`;
-console.log(test(10));
+// console.log(test(10));
+
+// default parameter : giá trị mặc định của tham số
+var sum = (a=0,b=0) => a+b;
+
+// console.log(sum(10,20));
+
+// destructuring
+var myArray = [1,2,3,4];
+
+// console.log(myArray[1]); // 2
+
+var [a,b,,d] = myArray;
+
+// console.log(a);
+// console.log(b);
+// // console.log(c);
+// console.log(d);
+var myObject = {
+    name: "chinhpd5",
+    age: 20,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+// console.log(myObject.name);// chinhpd5
+
+var {name,age,child:{name: childName}} = myObject;
+
+// console.log(name);
+// console.log(age);
+// console.log(childName);
+
+function showInfo(data){
+    console.log(data.name);
+    console.log(data.age);
+    console.log(data.child.name);
+}
+
+// showInfo(myObject)
+
+function showInfo1({name,age,child:{name: childName}}){
+    console.log(name);
+    console.log(age);
+    console.log(childName);
+}
+
+// showInfo1(myObject)
+
+
+
+
+
+
+
+
+
+
 
 
 
