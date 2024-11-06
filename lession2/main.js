@@ -155,6 +155,7 @@ var a = {
         value : 2
     }
 } // object  -> Biến tham chiếu
+
 // var b = {...a}; // spread nếu object hoặc array chỉ có 1 cấp
 // var {...b} = a;// rest nếu object hoặc array chỉ có 1 cấp
 var b = JSON.parse(JSON.stringify(a));
@@ -163,8 +164,40 @@ var b = JSON.parse(JSON.stringify(a));
 
 a.child.value2 = 2; // thêm 1 phần tử vào a
 
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
+
+// NULLish ??
+
+// nếu biến có giá trị là undefined hoặc null nó sẽ nhận giá trị phía sau ??
+
+var myName;
+
+// myName = myName ?? 'name default' // c1
+myName ??= 'default'
+
+// console.log(myName);
+
+// optional chaining ?.
+
+myObject = {
+    name: "chinhpd5",
+    age: 20,
+    // child: {
+    //     name: "chinhpd6"
+    // }
+}
+
+console.log(myObject.child);// undefined
+console.log(myObject.child?.name);
+console.log(123);
+
+
+// if(myObject.child){
+//     console.log(myObject.child.name);
+// }
+
+
 
 
 
