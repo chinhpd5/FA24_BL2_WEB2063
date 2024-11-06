@@ -117,7 +117,7 @@ var element1 = document.querySelector('#heading'); //# : id
 
 element1.classList.add('heading-title');
 element1.style.color = 'red';
-element1.setAttribute('data',"chinhpd5");
+element1.setAttribute('data',`chinhpd5`);
 // console.log(element1.getAttribute("data"));
 
 // 3. Text
