@@ -56,9 +56,47 @@ var myObject = {
 
 var {name, age, child: {name: childName}} = myObject;
 
-console.log(name);
-console.log(age);
-console.log(childName);
+// console.log(name);
+// console.log(age);
+// console.log(childName);
+
+// rest ... : phần còn lại
+
+myArray = [1,2,3,4];
+
+var [a,b,...rest] = myArray;
+
+// console.log(a);
+// console.log(b);
+// console.log(rest);
+
+myObject = {
+    name: "chinhpd5",
+    age: 30,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+var {name, ...restObj} = myObject;
+
+// console.log(name);
+// console.log(restObj);
+
+sum = (result,...rest)=>{
+    // console.log(rest);
+    // var result = 0;
+    rest.forEach((item)=>{
+        result += item;
+    })
+
+    return result;
+}   
+
+console.log(sum(1,2,3,4,5));
+console.log(sum(1,2,3,4,5,6,7,8,9));
+
+
 
 
 
