@@ -176,8 +176,43 @@ var a = {
 var b = JSON.parse(JSON.stringify(a));
 // object -(JSON.stringify)> json -(JSON.parse)> object
 a.child.value = 2
-console.log(a);// 2
-console.log(b);// 1
+// console.log(a);// 2
+// console.log(b);// 1
+
+
+// Nullish ??
+var myName;
+// nếu biến có giá trị undefined hoặc null sẽ lấy giá trị mặc định (??)
+
+// myName = myName ?? 'chinhpd5'; // cách 1
+myName ??= 'chinhpd5'; // cách 2
+// console.log(myName);
+
+// optional chaining ?.
+// Kiểm tra giá trị của phần tử cha
+// nếu cha có giá trị -> cho phép truy xuất
+// nếu cha KHÔNG có giá trị -> undefined
+var myInfo ={
+    name:"chinhpd5",
+    age: 20,
+    // child: {
+    //     name: "chinhpd6"
+    // }
+}
+
+console.log(myInfo.child); // undefined
+console.log(myInfo.child?.name); // undefined
+console.log(123);
+
+
+// if(myInfo.child){
+//     console.log(myInfo.child.name);//
+//     if(abc){
+//         // if()
+//     }
+// }
+
+
 
 
 
