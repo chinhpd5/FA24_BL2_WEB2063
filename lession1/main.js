@@ -126,8 +126,26 @@ pElements = document.querySelectorAll('.paragraph');
 
 
 // Attribute
+h1Element = document.querySelector('#heading-title');// id -> #
+// có sẵn
+h1Element.classList = 'title';
+h1Element.style.color = 'red';
+// chưa có
+h1Element.setAttribute('data',"chinhpd5");
+// console.log(h1Element.getAttribute('data'));
 
 // Text
+console.log(h1Element.innerText);
+console.log(h1Element.textContent);
+
+
+// h1Element.innerText = "<i>chinhpd6</i>"
+// h1Element.textContent = "<i>chinhpd6</i>"
+
+h1Element.innerHTML = "<i>chinhpd6</i>";
+
+
+
 
 
 
