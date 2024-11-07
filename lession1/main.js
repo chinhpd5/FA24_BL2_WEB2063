@@ -52,6 +52,86 @@ function test(){
 
 // console.log(mySchool);
 
+// Kiểu dữ liệu trong JS
+/**
+ * 1. Kiểu dữ liệu nguyên thủy
+ * - number: 1 -1 1.5
+ * - boolean: true false
+ * - string: '' "" ``
+ * - null
+ * - undefined
+ * - BigInt
+ * - Symbol
+ * 
+ * 2. Kiểu dữ liệu phức tạp:
+ * - Object
+ * - Array
+ */
+
+// Toán tử trong JS
+/**
+ * 1. Toán tử số học: + - * / % ** ,...
+ * 2. Toán tử so sánh: > < >= <= == != ===
+ * 3. Toán tử gán: = += (i += 10 <=> i = i + 10) -= *= /= ,...
+ * 4. Toán tử logic: ! && ||
+ */
+
+// Biểu thức điều kiện
+// if else, switch case, toán tử 3 ngôi
+
+const isCheck = (1 != true) ? 'Đúng': 'Sai';
+// console.log(isCheck);
+
+// Vòng lặp
+// Chưa biết trước: do while, while
+// biết trước: for, for of, for in, forEach
+
+// DOM là gì?
+
+// DOM: Document Object Model: Mô hình đối tượng tài liệu
+
+// Chúng ta có thể làm việc với DOM
+// sử dụng DOM để thêm sửa xóa: element, attribute, text
+
+// Element
+/**
+ * id class tag
+ * css selector
+ */
+
+var h1Element = document.getElementById('heading-title'); // id -> trả về 1 phần tử
+// console.log(h1Element);
+
+// class -> HTMLCollection(Mảng)
+var pElements = document.getElementsByClassName('paragraph');
+// console.log(pElements);
+
+//tag -> HTMLCollection(Mảng)
+pElements = document.getElementsByTagName('p');
+// console.log(pElements);
+
+// css selector
+// querySelector trả về duy nhất 1 phần tử đầu tiên tìm thấy
+h1Element = document.querySelector('#heading-title');// id -> #
+var pElement = document.querySelector('.paragraph');// class -> .
+pElement = document.querySelector('p'); // tag -> 
+// console.log(pElement);
+
+//querySelectorAll -> NodeList (mảng)
+pElements = document.querySelectorAll('.paragraph');
+// console.log(pElements);
+
+// Tìm hiểu sự khác nhau giữa HTMLCollection và NodeList
+
+
+
+// Attribute
+
+// Text
+
+
+
+
 
 
 
