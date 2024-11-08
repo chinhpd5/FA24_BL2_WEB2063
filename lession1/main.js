@@ -47,8 +47,45 @@ function test(){
     let ky2 = 5;
     // var và let đều không thể truy xuất bên ngoài 1 local scope (function)
 }
-
 // console.log(ky2);
+
+// Kiểu dữ liệu trong JS
+
+/**
+ * 1. Kiểu dữ liệu nguyên thủy
+ * - number: 1 -1 1.4
+ * - string: '' "" ``(template string)
+ * - boolean: true false
+ * - undefined
+ * - null
+ * - BigInt
+ * - Symbol
+ * 
+ * 2. Kiểu dữ liệu phức tạp
+ * - array []
+ * - object {}
+ */
+
+// Toán tử trong JS
+/**
+ * Toán tử số học: + - * / % ** ,...
+ * Toán tử gán: = += (i += 5 <=> i = i + 5) -= *= ,...
+ * Toán tử so sánh: == != > < >= <= ===
+ * Toán tử logic ! && ||
+ */
+
+// Biểu thức điều kiện
+// if else , switch case, toán tử 3 ngôi
+
+const isCheck = (1 != true) ? "Đúng":"Sai";
+// console.log(isCheck);
+
+// vòng lặp
+// 1. Chưa biết trước: while, do while
+// 2. Biết trước: for for of, for in,...forEach
+
+// DOM là gì?
+
 
 
 
