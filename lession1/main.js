@@ -85,6 +85,59 @@ const isCheck = (1 != true) ? "Đúng":"Sai";
 // 2. Biết trước: for for of, for in,...forEach
 
 // DOM là gì?
+// Document Object Model - Mô hình đối tượng tài liệu
+// có 3 thành phần
+
+// 1. element
+/**
+ * id, class, tag
+ * css selector
+ */
+// getElementById -> 1 phần tử duy nhất đầu tiên tìm thấy
+var h1Element = document.getElementById('heading-title'); // id
+// console.log(h1Element);
+
+var classElements = document.getElementsByClassName('title');// class
+classElements = document.getElementsByClassName('paragragh');// class
+
+// console.log(classElements);
+// getElementsByClassName -> trả về 1 mảng (HTMLCollection)
+
+var tagElements = document.getElementsByTagName('p');// tag
+// console.log(tagElements);
+// getElementsByTagName -> trả về 1 mảng (HTMLCollection)
+
+// css selector
+// querySelector-> trả về 1 phần tử
+h1Element = document.querySelector('#heading-title');// id: #
+var pElement = document.querySelector('.paragragh');// class: .
+var pElement = document.querySelector('p');// tag: 
+// console.log(pElement);
+
+//querySelectorAll -> trả về 1 mảng(NodeList)
+var pElements = document.querySelectorAll('.paragragh');
+// console.log(pElements);
+// phân biệt HTMLCollection và NodeList
+
+
+// 2. attribute
+h1Element = document.querySelector('#heading-title');// id: #
+h1Element.style.color = 'red';
+
+h1Element.setAttribute('data',"chinhpd5");
+console.log(h1Element.getAttribute('data'));
+
+
+// 3. text
+console.log(h1Element.innerText);
+console.log(h1Element.textContent);
+
+
+h1Element.textContent = "<i>chinhpd5</i>";
+h1Element.innerHTML = "<i>chinhpd5</i>";
+
+// DOM Làm việc (thêm sửa xóa) các phần tử có trong nó (element attribute text)
+
 
 
 
