@@ -113,8 +113,21 @@ var pElements = document.querySelectorAll('p.paragragh');
 // tìm hiểu sự khác nhau giữa HTMLCollection và NodeList
 
 // Attribute
+h1Element = document.querySelector('#heading');// id: #
+h1Element.style.color = 'red'
+// h1Element.data = "chinhpd5"
+
+h1Element.setAttribute("data", "chinhpd5");
+// console.log(h1Element.getAttribute('data'));
 
 // Text
+
+// console.log(h1Element.innerHTML);
+// console.log(h1Element.innerText);
+// console.log(h1Element.textContent);
+
+
+h1Element.innerHTML= "<i>chinhpd5</i>"
 
 // Làm việc với DOM là làm việc với (element attribute text) - thêm sửa xóa 
 
