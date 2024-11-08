@@ -48,6 +48,74 @@ function test(){
 
 // console.log(myLove3);
 
+//Kiểu dữ liệu trong JS
+/**
+ * 1. Kiểu dữ liệu nguyên thủy
+ * - string: '' "" ``(template string)
+ * - number: 1 -1 1.4
+ * - boolean: true false
+ * - undefined
+ * - null
+ * - BigInt
+ * - Symbol
+ * 
+ * 2. Kiểu dữ liệu phức tạp
+ * - array []
+ * - object {}
+ */
 
+// Toán tử trong JS
+/**
+ * Toán tử số học: +- * / % ** ,...
+ * Toán tử gán: = += -= (i -=10 <=> i = i =10), ....
+ * Toán tử so sánh: > < >= <= == != ===
+ * Toán tử logic: ! && ||
+ */
+
+// Biểu thức điều kiện: if else, switch case, toán tử 3 ngôi
+// Vòng lặp
+// 1 chưa biết số lần lặp : while, do while
+// 2. Biết trước: for, for of, for in, forEach
+
+// DOM ?
+// Document Object Model: Mô hình đối tượng tài liệu
+
+// Element
+
+/**
+ * id class tag
+ * css selector
+ */
+
+// getElementById -> trả về 1 phần tử duy nhất đầu tiên tìm thấy
+var h1Element = document.getElementById('heading');
+// console.log(h1Element);
+
+// getElementsByClassName-> trả về HTMLCollection (Mảng)
+var classElements = document.getElementsByClassName('paragragh');
+// console.log(classElements);
+
+// getElementsByTagName-> trả về HTMLCollection (Mảng)
+var tagElements = document.getElementsByTagName('p');
+// console.log(tagElements);
+
+// css selector
+// querySelector -> trả về phần tử đầu tiên tìm thấy
+h1Element = document.querySelector('#heading');// id: #
+var pElement = document.querySelector('.paragragh'); // class : .
+pElement = document.querySelector('body p'); // tag: 
+// console.log(pElement);
+
+// querySelectorAll -> trả về 1 NodeList(Mảng)
+var pElements = document.querySelectorAll('p.paragragh');
+
+// console.log(pElements);
+// tìm hiểu sự khác nhau giữa HTMLCollection và NodeList
+
+// Attribute
+
+// Text
+
+// Làm việc với DOM là làm việc với (element attribute text) - thêm sửa xóa 
 
 
