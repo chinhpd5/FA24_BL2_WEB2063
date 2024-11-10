@@ -74,6 +74,46 @@ function tesDestructuring({name, age, child: {name : childName}} ){
 
 // tesDestructuring(myObject)
 
+// Rest ... : Phần còn lại (tạo ra 1 mảng hay Object mới)
+
+myArray = [1,2,3,4,5];
+
+var [a,...rest] = myArray;
+
+// console.log(a);
+// console.log(rest);
+
+var sum = (total,...restPara) =>{
+    // console.log(total);
+    // console.log(restPara);
+    // let total =0;
+    restPara.forEach((item)=>{
+        total += item;
+    })
+    return total;
+}
+
+// console.log(sum(1,2,3,4,5));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
+
+myObject = {
+    name: 'chinhpd5',
+    age: 30,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+var {name, ...newObject} = myObject;
+
+console.log(name);
+console.log(newObject);
+
+
+
+
+
+
 
 
 
