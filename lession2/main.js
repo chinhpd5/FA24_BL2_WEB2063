@@ -20,7 +20,7 @@ var sayHello1 = function (name){
 // console.log(sayHello1('chinhpd5'));
 
 // 3. Arrow function 
-var sayHello2 = (name) => {
+var sayHello2 = (name,age,home) => {
     return `Tạm biệt ${name}`
 }
 
@@ -28,7 +28,57 @@ var sayHello2 = (name) => {
 
 var sayHello3 = age => `Tuổi: ${age}`;
 
-console.log(sayHello3(20));
+// console.log(sayHello3(20));
+
+// Detructuring
+
+var myArray = [1,2,3];
+
+// console.log(myArray[1]); // 2
+
+var [a,,c] = myArray;
+
+// console.log(a);// 1
+// // console.log(b);// 2
+// console.log(c);// 3
+
+var myObject = {
+    name: 'chinhpd5',
+    age: 30,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+// console.log(myObject.name); //"chinhpd5"
+// console.log(myObject.age); // 30
+
+var {name, age, child: {name : childName}} = myObject;
+// console.log(name);
+// console.log(age);
+// console.log(childName);
+
+function test(data){
+    console.log(data.name);
+    console.log(data.age);
+    console.log(data.child.name);
+}
+
+// test(c)
+
+function tesDestructuring({name, age, child: {name : childName}} ){
+    console.log(name);
+    console.log(age);
+    console.log(childName);
+}
+
+// tesDestructuring(myObject)
+
+
+
+
+
+
 
 
 
