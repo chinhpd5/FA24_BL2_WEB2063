@@ -122,10 +122,26 @@ tbodyElement.innerHTML = trElementsMap;
 // trả về 1 mảng mới chứa các phần tử thỏa mãn đk (return)
 
 const filterData = data.filter((item,index)=>{
-    return item.age > 19
+    // return item.age > 19
+    return !item.gender;
 })
-// tìm kiếm những phần tử có giới tính nữ`
-console.log(filterData);
+// tìm kiếm những phần tử có giới tính nữ
+// console.log(filterData);
+
+//reduce
+// preValue: lưu trữ các giá trị qua mỗi lần lặp
+// item giá trị các phần
+// index: vị trị
+// initValue: giá trị khởi tạo preValue ở lần lặp đầu tiên
+
+var initValue =10;
+const result = data.reduce((preValue,item,index)=>{
+    return preValue+= item.mark;
+    //initValue(10)= preValue(10)+ 10 = 10 + 4 =14 + 9 =23 +5 =38
+},initValue)
+
+console.log(result);
+
 
 
 
