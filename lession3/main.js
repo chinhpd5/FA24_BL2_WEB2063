@@ -59,9 +59,21 @@ data.forEach((item,index)=>{
     `
 })
 
-console.log(trElements);
+// console.log(trElements);
 // lấy ra phần tử toby thông qua querySelector
 const tbodyElement = document.querySelector('tbody');
 // gán giá trị trElements vào tbodyElement thông qua innerHTML
 // tbodyElement.innerHTML = trElements
-tbodyElement.innerHTML = trElements
+tbodyElement.innerHTML = trElements;
+
+
+// find: duyệt qua mảng
+// tìm kiếm 1 phần tử gần nhất thỏa mãn ĐK (return)
+// kết thúc vòng lặp
+const findItem = data.find((item,index)=>{
+    console.log(index);
+    // return item.age == 21;
+    return !item.gender; // item.gender == false 
+})
+
+console.log(findItem);
