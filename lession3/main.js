@@ -63,4 +63,5 @@ console.log(trElements);
 // lấy ra phần tử toby thông qua querySelector
 const tbodyElement = document.querySelector('tbody');
 // gán giá trị trElements vào tbodyElement thông qua innerHTML
+// tbodyElement.innerHTML = trElements
 tbodyElement.innerHTML = trElements
