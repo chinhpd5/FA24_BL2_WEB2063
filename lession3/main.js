@@ -1,7 +1,7 @@
 // Các phương thức làm việc với mảng
 
 /**
- * forEach
+ * forEach (for)
  * find
  * some
  * every
