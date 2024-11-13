@@ -58,10 +58,48 @@ data.forEach((item,index)=>{
     `
 })
 
-console.log(trElement);
+// console.log(trElement);
 // lấy phần tử tbody querySelector
 const tbodyElement = document.querySelector('tbody');
 // gán dữ liệu trElement thông qua phương thức innerHTML
 tbodyElement.innerHTML = trElement;
+
+
+// find: duyệt qua mảng
+// tìm kiếm 1 phần tử đầu tiên thỏa mãn điều kiện (return)
+// và kết thúc vòng lặp
+
+const findItem = data.find((item,index)=>{
+    // console.log(index);
+    // return item.age > 20;
+    return item.mark == 9;
+})
+
+// console.log(findItem);
+
+// some: duyệt qua mảng trả về giá trị boolean (true | false)
+// trả về giá trị true nếu có ít nhất 1 phần tử thỏa mãn ĐK (return) -> kết thúc vòng lặp
+// trả về giá trị fasle nếu toàn bộ phần tử trong mảng KHÔNG thỏa mãn ĐK
+
+const checkSome = data.some((item,index)=>{
+    // console.log(index);
+    // return !item.gender; //item.gender == false
+    return item.mark < 5;
+})
+
+// console.log(checkSome);
+
+// every: duyệt qua mảng trả về giá trị boolean (true | false)
+// trả về giá trị true nếu toàn bộ phần tử trong mảng thỏa mãn ĐK (return)
+// trả về giá trị false nếu ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> kết thúc vòng lặp
+
+const checkEvery = data.every((item,index)=>{
+    console.log(index);
+    // return item.mark > 5;
+    return item.age >= 20;
+})
+
+console.log(checkEvery);
+
 
 
