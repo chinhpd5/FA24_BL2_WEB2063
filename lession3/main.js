@@ -96,10 +96,22 @@ const checkEvery = data.every((item, index)=>{
 
 // console.log(checkEvery);
 
+
+// filter: duyệt qua tất cả các phần tử trong mảng
+// trả về tất cả các phần tử thoải mãn ĐK (return)
+
+const filterElements = data.filter((item,index)=>{
+    return !item.gender
+    // return item.mark > 7; 
+})
+
+console.log(filterElements);
+
+
 // map: duyệt qua tất cả các phần tử mảng
 // trả về 1 mảng mới (return)
 
-const mapTrElement = data.map((item,index)=>{
+const mapTrElement = filterElements.map((item,index)=>{
     return `
         <tr>
             <th scope="row">${index+1}</th>
@@ -111,5 +123,6 @@ const mapTrElement = data.map((item,index)=>{
         </tr>
     `
 }).join(''); // join chuyển 1 mảng -> 1 chuỗi
-console.log(mapTrElement);
+// console.log(mapTrElement);
 tbodyElement.innerHTML = mapTrElement;
+
