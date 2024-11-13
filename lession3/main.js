@@ -115,8 +115,18 @@ const trElementsMap = data.map((item,index)=>{
     `
 }).join('');// join chuyển mảng -> chuỗi
 
-console.log(trElementsMap);
+// console.log(trElementsMap);
 tbodyElement.innerHTML = trElementsMap;
+
+// filter: duyệt qua toàn bộ các phần tử trong mảng
+// trả về 1 mảng mới chứa các phần tử thỏa mãn đk (return)
+
+const filterData = data.filter((item,index)=>{
+    return item.age > 19
+})
+// tìm kiếm những phần tử có giới tính nữ`
+console.log(filterData);
+
 
 
 
