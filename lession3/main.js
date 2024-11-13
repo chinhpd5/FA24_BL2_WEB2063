@@ -126,3 +126,18 @@ const mapTrElement = filterElements.map((item,index)=>{
 // console.log(mapTrElement);
 tbodyElement.innerHTML = mapTrElement;
 
+// reduce
+// preValue: giá trị lưu trữ qua các lần lặp
+// item: giá trị các phần tử
+// index: vị trí
+// initValue: giá trị khởi tạo cho preVulue
+
+// tính tổng điểm các phần tử có trong mảng data
+var initValue =0;
+const result = data.reduce((preValue,item,index)=>{
+    return preValue += item.mark; //29
+},initValue)
+
+console.log(result);
+
+
