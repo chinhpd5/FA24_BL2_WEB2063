@@ -71,9 +71,33 @@ tbodyElement.innerHTML = trElements;
 // tìm kiếm 1 phần tử gần nhất thỏa mãn ĐK (return)
 // kết thúc vòng lặp
 const findItem = data.find((item,index)=>{
-    console.log(index);
+    // console.log(index);
     // return item.age == 21;
     return !item.gender; // item.gender == false 
 })
 
-console.log(findItem);
+// console.log(findItem);
+
+// some: trả về kết quả boolean (true| false);
+// true: trong mảng có ít nhất 1 phần thỏa mãn ĐK(return) -> kết thúc vòng lặp
+// false: trong mảng KHÔNG có phần tử nào thỏa mãn ĐK
+
+const checkSome = data.some((item,index)=>{
+    // console.log(index);
+    return item.age >= 21;
+})
+
+// console.log(checkSome);
+
+// every: trả về kết quả boolean (true | false);
+//true: nếu trong mảng có toàn bộ các phần tử thỏa mãn ĐK (return)
+//false: nếu trong mảng có ít nhất 1 phần KHÔNG thỏa mãn ĐK -> kết thúc vòng lặp
+
+const checkEvery = data.every((item,index)=>{
+    console.log(index);
+    return item.mark >= 4
+})
+
+console.log(checkEvery);
+
+
