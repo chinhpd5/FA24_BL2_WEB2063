@@ -77,13 +77,21 @@ const findItem = data.find((item,index)=>{
 // trả về false nếu tất các phần tử trong mảng KHÔNG thỏa mãn ĐK
 
 const checkSome = data.some((item,index)=>{
-    console.log(index);
-    return item.age > 20;
+    // console.log(index);
+    return item.mark < 5;
 })
 
 // Kiểm tra mảng data có 1 phần tử có điểm < 5?
 
-console.log(checkSome);
+// console.log(checkSome);
 
+// every: trả về giá trị boolean (true | false)
+// trả về giá trị true nếu tất cả các phần tử thỏa mãn ĐK (return)
+// trả về giá trị false nếu ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> kết thúc vòng lặp
 
+const checkEvery = data.every((item, index)=>{
+    console.log(index);
+    return item.gender;
+})
 
+console.log(checkEvery);
