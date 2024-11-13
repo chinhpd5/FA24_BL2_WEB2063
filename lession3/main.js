@@ -21,7 +21,7 @@ let data = [
         name: "chinhpd6",
         age:21,
         gender: false,
-        mark:7
+        mark:4
     },
     {
         name: "chinhpd8",
@@ -33,7 +33,7 @@ let data = [
         name: "chinhpd9",
         age:20,
         gender: false,
-        mark: 9
+        mark: 5
     }
 ]
 
@@ -116,8 +116,33 @@ const trElementMap =  data.map((item,index)=>{
     `
 }).join('');// join: chuyển mảng -> chuỗi
 
-console.log(trElementMap);
+// console.log(trElementMap);
 tbodyElement.innerHTML = trElementMap
+
+// filter: duyệt qua toàn bộ các phần tử trong mảng
+// trả về 1 mảng mới có các phần tử thỏa mãn đk (return);
+
+const filterData = data.filter((item,index)=>{
+    // return item.mark > 5;
+    return !item.gender
+})
+
+// console.log(filterData);
+// preValue: giá trị lưu trữ qua các lần lặp;
+// item: giá trị của phần tử qua các lần lặp
+// index: vị trí
+// array: mảng data
+// initValue: giá trị khởi tạo cho preValue
+
+var initValue = 10;
+const result = data.reduce((preValue,item,index,array)=>{
+    return preValue += item.mark; // cộng dồn điểm vào preValue qua các lần lần lặp
+    // initValue(10) + 10 =10 + 4=14 +9 =23 + 5 =28
+},initValue)
+
+
+console.log(result);
+
 
 
 
