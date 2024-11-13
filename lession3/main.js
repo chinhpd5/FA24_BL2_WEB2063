@@ -62,7 +62,7 @@ data.forEach((item,index)=>{
 // lấy phần tử tbody querySelector
 const tbodyElement = document.querySelector('tbody');
 // gán dữ liệu trElement thông qua phương thức innerHTML
-tbodyElement.innerHTML = trElement;
+// tbodyElement.innerHTML = trElement;
 
 
 // find: duyệt qua mảng
@@ -94,12 +94,31 @@ const checkSome = data.some((item,index)=>{
 // trả về giá trị false nếu ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> kết thúc vòng lặp
 
 const checkEvery = data.every((item,index)=>{
-    console.log(index);
+    // console.log(index);
     // return item.mark > 5;
     return item.age >= 20;
 })
 
-console.log(checkEvery);
+// console.log(checkEvery);
+
+// map: duyệt qua toàn bộ các phần tử trong mảng
+// trả về 1 mảng mới thông qua các phần từ của (return)
+
+const trElementMap =  data.map((item,index)=>{
+    return `
+        <tr>
+            <th scope="row">${index+1}</th>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${item.gender ? "Nam": "Nữ"}</td>
+            <td>${item.mark}</td>
+        </tr>
+    `
+}).join('');// join: chuyển mảng -> chuỗi
+
+console.log(trElementMap);
+tbodyElement.innerHTML = trElementMap
+
 
 
 
