@@ -27,7 +27,7 @@ const data = [
         name: "chinhpd8",
         age:19,
         gender: true,
-        mark: 9
+        mark: 4
     },
     {
         name: "chinhpd9",
@@ -59,7 +59,7 @@ data.forEach((item,index)=>{
 // lấy ra phần tử tbody
 const tbodyElement = document.querySelector('tbody');
 // gán giá trị trElement vào tbody thông qua phương thức 'innerHTML'
-tbodyElement.innerHTML = trElement
+// tbodyElement.innerHTML = trElement
 
 // find: tìm kiếm 1 phần tử trong mảng thỏa mãn ĐK (return)
 // trả về phần tử đầu tiên tìm thấy và kết thúc vòng lặp
@@ -90,8 +90,26 @@ const checkSome = data.some((item,index)=>{
 // trả về giá trị false nếu ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> kết thúc vòng lặp
 
 const checkEvery = data.every((item, index)=>{
-    console.log(index);
+    // console.log(index);
     return item.gender;
 })
 
-console.log(checkEvery);
+// console.log(checkEvery);
+
+// map: duyệt qua tất cả các phần tử mảng
+// trả về 1 mảng mới (return)
+
+const mapTrElement = data.map((item,index)=>{
+    return `
+        <tr>
+            <th scope="row">${index+1}</th>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${(item.gender ? 'Nam': 'Nữ')}</td>
+            <td>${item.mark}</td>
+            <td>${(item.mark > 5? "Giỏi": "Trung bình")}</td>
+        </tr>
+    `
+}).join(''); // join chuyển 1 mảng -> 1 chuỗi
+console.log(mapTrElement);
+tbodyElement.innerHTML = mapTrElement;
