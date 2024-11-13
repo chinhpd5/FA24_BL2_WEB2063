@@ -139,5 +139,3 @@ const result = data.reduce((preValue,item,index)=>{
 },initValue)
 
 console.log(result);
-
-
