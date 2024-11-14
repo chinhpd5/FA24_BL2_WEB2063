@@ -115,7 +115,50 @@ const trElementsMap = data.map((item,index)=>{
         </tr>
     `
 }).join("");//join: chuyển mảng -> chuỗi
-console.log(trElementsMap);
-
+// console.log(trElementsMap);
 tbodyElement.innerHTML = trElementsMap;
+
+// tạo 1 mảng mới có các phần tử chứa nội dung của phần tử cũ,
+// thêm mới phần tử có key = hocLuc
+// giá trị: mark > 5 => hocLuc: 'Giỏi'
+// giá trị: mark < 5 => hocLuc: 'Kém'
+// sử dụng map
+
+const newData = data.map((item)=>{
+    // return {
+    //     name: item.name,
+    //     age: item.age,
+    //     gender: item.gender,
+    //     mark: item.mark,
+    //     hocLuc: item.mark > 5 ? "Giỏi": "Kém"
+    // }
+
+    return {
+        ...item, // spread : phân rã item
+        hocLuc: item.mark > 5 ? "Giỏi": "Kém"
+    }
+})
+
+// console.log(newData);
+
+/**
+ * ví dụ:
+ * {
+        name: "chinhpd5",
+        age:20,
+        gender: true,
+        mark: 10,
+        hocLuc: "Giỏi"
+    },
+ */
+
+// filter: duyệt qua toàn bộ phần tử trong mảng
+// trả về mảng mới chứa các phần tử thỏa mãn đk (return)
+
+const filterData = data.filter((item)=>{
+    // return item.mark > 5;
+    return !item.gender;
+})
+console.log(filterData);
+
 
