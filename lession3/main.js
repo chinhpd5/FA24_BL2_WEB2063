@@ -159,6 +159,21 @@ const filterData = data.filter((item)=>{
     // return item.mark > 5;
     return !item.gender;
 })
-console.log(filterData);
+
+// reduce
+// console.log(filterData);
+// preValue: giá trị lưu qua các lần lăpj
+// item: giá trị các phần tử
+// index: vị trí các phần tử
+// initValue: giá trị khởi tạo cho preValue
+var initValue = 0;
+
+const total = data.reduce((preValue,item,index)=>{
+    return preValue += item.mark;
+    // preValue(0) + 10 = 10 +4 =14 + 8 = 22 + 5 = 27
+},initValue)
+
+
+console.log(total);
 
 
