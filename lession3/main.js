@@ -62,7 +62,7 @@ data.forEach((item,index)=>{
 // lấy ra phần tử tbody của table
 const tbodyElement = document.querySelector('tbody');
 // gán trElements vào tbody thông qua innerHTML
-tbodyElement.innerHTML = trElements;
+// tbodyElement.innerHTML = trElements;
 
 
 // find: duyệt qua mảng, trả về 1 phần tử đầu tiên tìm thấy thỏa mãn ĐK thông qua (return)
@@ -94,10 +94,28 @@ const checkSome = data.some((item,index)=>{
 // nếu có ít nhất 1 phần tử KHÔNG thõa Đk -> false -> kết thúc vòng lặp
 
 const checkEvery = data.every((item,index)=>{
-    console.log(index);
+    // console.log(index);
     // return !item.gender; // item.gender == false
     return item.age >= 19;
 })
 
-console.log(checkEvery);
+// console.log(checkEvery);
+
+// map: duyệt qua toàn bộ các phần tử trong mảng
+// trả về 1 mảng mới chứa các phần tử thông qua return
+
+const trElementsMap = data.map((item,index)=>{
+    return `
+        <tr>
+            <th scope="row">${index+1}</th>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${item.gender ? 'Nam': "Nữ"}</td>
+            <td>${item.mark}</td>
+        </tr>
+    `
+}).join("");//join: chuyển mảng -> chuỗi
+console.log(trElementsMap);
+
+tbodyElement.innerHTML = trElementsMap;
 
