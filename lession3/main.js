@@ -69,10 +69,35 @@ tbodyElement.innerHTML = trElements;
 // sau khi tìm được phần tử -> kết thúc vòng lặp
 
 const findItem = data.find((item,index)=>{
-    console.log(index);
+    // console.log(index);
     // return item.age == 21;
     return item.gender; // item.gender == true
 })
 
-console.log(findItem);
+// console.log(findItem);
+
+
+// some: duyệt qua mảng -> trả về boolean (true | false)
+// nếu mảng có ít nhất 1 phần tử thỏa mãn ĐK (return) -> true -> kết thúc vòng lặp
+// nếu tất cả các phần tử trong mảng KHÔNG thỏa mãn ĐK -> false
+
+const checkSome = data.some((item,index)=>{
+    // console.log(index);
+    // return item.mark < 5;
+    return item.age >21;
+})
+
+// console.log(checkSome);
+
+// every: duyệt qua mảng -> trả về boolean (true | false)
+// nếu tất cả phần tử trong mảng thỏa mãn ĐK (return) -> true
+// nếu có ít nhất 1 phần tử KHÔNG thõa Đk -> false -> kết thúc vòng lặp
+
+const checkEvery = data.every((item,index)=>{
+    console.log(index);
+    // return !item.gender; // item.gender == false
+    return item.age >= 19;
+})
+
+console.log(checkEvery);
 
