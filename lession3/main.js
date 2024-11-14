@@ -58,8 +58,21 @@ data.forEach((item,index)=>{
     `
 })
 
-console.log(trElements);
+// console.log(trElements);
 // lấy ra phần tử tbody của table
 const tbodyElement = document.querySelector('tbody');
 // gán trElements vào tbody thông qua innerHTML
 tbodyElement.innerHTML = trElements;
+
+
+// find: duyệt qua mảng, trả về 1 phần tử đầu tiên tìm thấy thỏa mãn ĐK thông qua (return)
+// sau khi tìm được phần tử -> kết thúc vòng lặp
+
+const findItem = data.find((item,index)=>{
+    console.log(index);
+    // return item.age == 21;
+    return item.gender; // item.gender == true
+})
+
+console.log(findItem);
+
