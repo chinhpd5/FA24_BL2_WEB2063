@@ -92,8 +92,8 @@ sum = (a,...rest)=>{
     return a;
 }
 
-console.log(sum(1,2,3,4,5));
-console.log(sum(1,2,3,4,5,6,7,8,9));
+// console.log(sum(1,2,3,4,5));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
 
 myInfo = {
     name: "chinhpd5",
@@ -105,8 +105,73 @@ myInfo = {
 
 var {name,...restObj} = myInfo
 
-console.log(name);
-console.log(restObj);
+// console.log(name);
+// console.log(restObj);
+
+
+// spread ... : phân rã
+
+var arr1 = [1,2];
+var arr2 = [3,4,5];
+// [1,2,3,4,5];
+
+// console.log(arr1.concat(arr2));
+
+var newArr = [...arr1, ...arr2];
+// console.log(newArr);
+
+var obj1 = {
+    name:"chinhpd5",
+    age: 20
+}
+
+var obj2 = {
+    name: "chinhpd6"
+}
+
+var newObj = {...obj1, ...obj2}
+// console.log(newObj);
+
+var a = 1; // number -> Biến tham trị
+var b = a; // b = 1 // gán giá trị của a cho b
+a = 2;// a thay đổi -> b vẫn giữ nguyên
+// console.log(b); // 1
+
+//===========
+var a = {value : 1}; // object -> Biến tham chiếu
+var b = a; // gán vị trí nhớ của a cho b; a và b cùng ô nhớ
+a.value = 2; // khi a thay đổi -> b cũng thay đổi theo a
+// console.log(b.value); //2
+
+// Biến tham trị || Biến tham chiếu
+// Biến tham trị
+// khi gán (copy) biến (string number boolean) -> copy giá trị của biến đó
+
+// Biến tham chiếu
+// khi gán (copy) biến (array object) -> gán vị trí nhớ của biến đó
+
+var a = {
+    value : 1,
+    child: {
+        valueChild: 1
+    }
+}; 
+// var b = {...a}; // spread 
+// var {...b} = a; // rest
+
+var b = JSON.parse(JSON.stringify(a));// deep clone
+
+// object -(JSON.stringify)> JSON -(JSON.parse)> Object
+
+// rest spread: copy nông, chỉ copy được cấp độ 1
+// deep copy
+
+a.child.valueChild = 2;
+
+console.log(b);// 1
+
+
+
 
 
 
