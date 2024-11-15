@@ -107,8 +107,63 @@ myInfo = {
 }
 
 var {name, ...restObj} = myInfo;
-console.log(name);
-console.log(restObj);
+// console.log(name);
+// console.log(restObj);
+
+// spread: ... Phân rã
+
+var arr1 = [1,2];
+var arr2 = [3,4];
+
+// console.log(arr1.concat(arr2));
+var newArr = [...arr1, ...arr2];
+// console.log(newArr);
+
+var obj1 ={
+    name: "chinhpd5",
+    age: 20
+}
+
+var obj2 ={
+    name: "chinhpd6"
+}
+
+var newObj = {...obj1, ...obj2}
+// console.log(newObj);
+
+var a = 1;// number -> biến tham trị
+var b = a; //b=1 // gán giá trị
+a = 2; //2
+// console.log(b); // 1
+
+//==============
+var a = {value: 1} // object -> biến tham chiếu
+var b = a; // gán vị trí nhớ của a cho b -> a và b cùng ô nhớ
+a.value = 2 //khi thay đổi a thì b cũng bị thay đổi theo
+// console.log(b.value); //2
+
+// Biến tham trị và biến tham chiếu
+
+// Biến tham trị (string number boolean)
+// khi gán biến cho 1 biến khác
+// => gán giá trị
+
+// Biến tham chiếu (array, object)
+// khi gán biến cho 1 biến khác
+// => gán vị trí nhớ(tham chiếu) của biến
+
+var a = {value : 1}
+// var b = {...a};//spread
+var {...b} = a; // rest
+
+a.value = 2;
+console.log(b.value);
+
+
+
+
+
+
 
 
 
