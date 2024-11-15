@@ -157,7 +157,41 @@ var a = {value : 1}
 var {...b} = a; // rest
 
 a.value = 2;
-console.log(b.value);
+// console.log(b.value);
+
+// nullish: ??  có giá trị undefined ,null
+var myName;
+
+// myName = myName ?? 'default name';// cách 1
+myName ??= 'name' // cách 2
+
+// console.log(myName);
+
+// optional chaining: ?. 
+myInfo ={
+    name: "chinhpd5",
+    age: 20,
+    // child: {
+    //     name: "chinhpd6"
+    // }
+}
+
+console.log(myInfo.child); //undefined
+console.log(myInfo.child?.name);// -> undefined
+// tiếp tục chạy các câu lệnh tiếp theo
+
+// if(myInfo.child){
+//     console.log(myInfo.child.name);// -> lỗi
+//     if(true){
+//         //logic
+//         if(true){
+
+//         }
+//     }
+// }
+console.log(123);
+
+
 
 
 
