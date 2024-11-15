@@ -173,7 +173,6 @@ const total = data.reduce((preValue,item,index)=>{
     // preValue(0) + 10 = 10 +4 =14 + 8 = 22 + 5 = 27
 },initValue)
 
-
 console.log(total);
 
 
