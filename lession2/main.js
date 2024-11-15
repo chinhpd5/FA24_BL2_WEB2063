@@ -24,7 +24,17 @@ var sayHello2 = (name,age) => {
 // console.log(sayHello2("chinhpd5",20));
 
 var sayHello3 = name => `Tạm biệt ${name}`;
-console.log(sayHello3('chinhpd5'));
+
+// console.log(sayHello3('chinhpd5'));
+
+// default parameter: giá trị mặc định cho tham số của hàm
+
+var sum = (a=0,b=20) => a+b;
+
+console.log(sum(10,15));
+
+
+
 
 
 
