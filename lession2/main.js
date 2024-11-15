@@ -44,7 +44,6 @@ var [a,,c,d] = myArray; // destructuring làm việc với array
 // console.log(c);// 3
 // console.log(d);// 4
 //
-
 var myInfo = {
     name: "chinhpd5",
     age: 20,
@@ -65,7 +64,6 @@ var {name,age, child: {name: childName}} = myInfo;
 //     console.log(data.age);
 //     console.log(data.child.name);
 // }
-
 // test(myInfo)
 
 function testDestructuring({name,age, child: {name: childName}}){
@@ -74,7 +72,47 @@ function testDestructuring({name,age, child: {name: childName}}){
     console.log(childName);
 }
 
-testDestructuring(myInfo)
+// testDestructuring(myInfo)
+
+// REST: ... Phần còn lại
+
+myArray = [1,2,3,4];
+
+var [a,...rest] = myArray;
+
+// console.log(a); // 1
+// console.log(rest); // [2,3,4]
+
+sum = (a,...rest)=>{
+    // console.log(a);
+    // console.log(rest);
+    // return
+    // let total = 0;
+    rest.forEach((item)=>{
+        // console.log(item);
+        a+=item;
+    })
+    return a;
+}
+
+// console.log(sum(1,2,3,4,5));
+// console.log(sum(1,2,3,4,5,6,7,8,9));
+
+myInfo = {
+    name: "chinhpd5",
+    age: 20,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+var {name, ...restObj} = myInfo;
+console.log(name);
+console.log(restObj);
+
+
+
+
 
 
 
