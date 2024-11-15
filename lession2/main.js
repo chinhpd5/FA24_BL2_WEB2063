@@ -69,7 +69,45 @@ function testDestructuring({name,age,child: {name: childName}}){
     console.log(age);
     console.log(childName);
 }
-testDestructuring(myInfo)
+// testDestructuring(myInfo)
+
+// rest ... phần còn lại
+
+myArray = [1,2,3,4];
+
+var [a,...rest] = myArray;
+
+// console.log(a); // 1
+// console.log(rest); // [2,3,4]
+
+sum = (a,...rest)=>{
+    // console.log(a);
+    // console.log(rest);
+    // return;
+    // let total = 0;
+    for(var i =0 ;i< rest.length; i++){
+        a += rest[i];
+    }
+    // return total;
+    return a;
+}
+
+console.log(sum(1,2,3,4,5));
+console.log(sum(1,2,3,4,5,6,7,8,9));
+
+myInfo = {
+    name: "chinhpd5",
+    age: 20,
+    child: {
+        name: "chinhpd6"
+    }
+}
+
+var {name,...restObj} = myInfo
+
+console.log(name);
+console.log(restObj);
+
 
 
 
