@@ -168,7 +168,41 @@ var b = JSON.parse(JSON.stringify(a));// deep clone
 
 a.child.valueChild = 2;
 
-console.log(b);// 1
+// console.log(b);// 1
+
+// nullish ??: undefined hoặc null -> giá trị mặc định sử dụng ??
+
+var myName;
+// myName = myName ?? 'default name'; // cách 1
+myName ??= 'name';
+// console.log(myName);
+
+
+// optional chaining ?.
+myInfo = {
+    name: "chinhpd5",
+    age: 20,
+    // child: {
+    //     name: "chinhpd6"
+    // }
+}
+
+console.log(myInfo.child);//undefined
+console.log(myInfo.child?.name);// undefined -> code phía sau tiếp tục được thực hiện
+
+// if(myInfo.child){
+//     console.log(myInfo.child.name); 
+//     if(myInfo.child.name){
+//         console.log(myInfo.child.name.abc); 
+//     }
+// }
+
+console.log(123); // logic đằng sau
+
+
+
+
+
 
 
 
