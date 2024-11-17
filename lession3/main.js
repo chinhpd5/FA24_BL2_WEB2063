@@ -68,8 +68,33 @@ tbodyElement.innerHTML = trElements;
 
 const findItem = data.find((item,index)=>{
     // return item.age == 19;
-    return !item.gender; // item.gender == false
+    // return !item.gender; // item.gender == false
+    return item.mark <= 5;
 })
 // tìm phần tử đầu tiên có điểm <=5 
-console.log(findItem);
+// console.log(findItem);
+
+//some: duyệt qua các phần tử trong mảng trả về boolean (true | false)
+// nếu có ít nhất 1 phần tử trong mảng thỏa mãn ĐK (return) -> true -> kết thúc vòng lặp
+// nếu toàn bộ phần tử trong mảng KHÔNG thỏa mãn ĐK -> false
+
+const checkSome = data.some((item,index)=>{
+    // console.log(index);
+    // return item.mark < 5;
+    return item.mark < 2;
+})
+// console.log(checkSome);
+
+
+//every: duyệt qua các phần tử trong mảng trả về boolean (true | false)
+// nếu tất cả các phần tử trong mảng thỏa mãn ĐK (return) -> true
+// nếu có ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> false
+
+const checkEvery = data.every((item,index)=>{
+    console.log(index);
+    // return item.age >=18;
+    return item.gender; // item.gender == true;
+})
+console.log(checkEvery);
+
 
