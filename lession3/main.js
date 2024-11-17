@@ -66,10 +66,36 @@ tbodyElement.innerHTML = trElements
 // find: duyệt qua mảng và trả về phần duy nhất đầu tiên thỏa mãn điều kiện(return)
 
 const findItem = data.find((item,index)=>{
-    console.log(index);
+    // console.log(index);
     // return item.age == 19;
-    return !item.gender; // item.gender == false
+    // return !item.gender; // item.gender == false
+    return item.mark < 10;
+})
+// tìm phần có điểm < 10 đầu tiên
+// console.log(findItem);
+
+
+// some: duyệt qua mảng, trả về giá trị boolean (true|false)
+// nếu trong mảng có ít nhất 1 phần tử thỏa mãn ĐK (return) -> true -> kết thúc vòng lặp
+// nếu tất cả các phần tử trong mảng KHÔNG thỏa mãn ĐK -> false
+
+const checkSome = data.some((item,index)=>{
+    // console.log(index);
+    // return item.mark <= 2;
+    return item.mark == 4;
+})
+// console.log(checkSome);
+
+// every : duyệt qua mảng, trả về giá trị boolean (true|false)
+// nếu tất cả các phần tử thỏa mãn ĐK (Return) -> true
+// nếu có ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> fasle -> kết thúc vòng lặp
+
+const checkEvery = data.every((item,index)=>{
+    console.log(index);
+    // return item.gender; // item.gender == true
+    return item.age >= 18;
 })
 
-console.log(findItem);
+console.log(checkEvery);
+
 
