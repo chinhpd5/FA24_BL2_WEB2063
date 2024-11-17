@@ -62,3 +62,14 @@ data.forEach((item,index)=>{
 const tbodyElement = document.querySelector('tbody');
 // gán giá trị trElements vào tbody thông qua innerHTML
 tbodyElement.innerHTML = trElements;
+
+// find: duyệt qua mảng 
+//trả về 1 phần tử duy nhất đầu tiên tìm thấy thỏa mãn DK (return)
+
+const findItem = data.find((item,index)=>{
+    // return item.age == 19;
+    return !item.gender; // item.gender == false
+})
+// tìm phần tử đầu tiên có điểm <=5 
+console.log(findItem);
+
