@@ -113,8 +113,34 @@ const newTrElements = data.map((item,index)=>{
     `
 }).join('');// join: chuyển mảng -> chuỗi
 
-console.log(newTrElements);
+// console.log(newTrElements);
 tbodyElement.innerHTML = newTrElements
+
+// filter: duyệt qua toàn bộ các phần tử trong mảng
+// trả về 1 mảng mới chứa các phần thỏa mãn điều kiện return
+
+const filterData = data.filter((item,index)=>{
+    // return item.mark > 5;
+    return !item.gender;
+})
+
+// console.log(filterData);
+
+// reduce
+// preValue: giá trị lưu  trữ qua các lần lặp
+// item: giá trị của các phần tử trong mảng qua mỗi lần lặp
+// index: vị trí của các phần tử
+// initValue: giá trị khởi tạo preValue
+
+var initValue = 10;
+const total = data.reduce((preValue,item,index)=>{
+    return preValue += item.mark;
+    // preValue(0) +10 = 10 + 4 = 14 + 8 = 22 + 5 = 27
+},initValue)
+
+console.log(total);
+
+
 
 
 
