@@ -61,7 +61,7 @@ data.forEach((item,index)=>{
 // lấy ra phần tử tbody
 const tbodyElement = document.querySelector('tbody');
 // gán vào tbody qua phương thức innerHTML
-tbodyElement.innerHTML = trElements
+// tbodyElement.innerHTML = trElements
 
 // find: duyệt qua mảng và trả về phần duy nhất đầu tiên thỏa mãn điều kiện(return)
 
@@ -91,11 +91,30 @@ const checkSome = data.some((item,index)=>{
 // nếu có ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> fasle -> kết thúc vòng lặp
 
 const checkEvery = data.every((item,index)=>{
-    console.log(index);
+    // console.log(index);
     // return item.gender; // item.gender == true
     return item.age >= 18;
 })
 
-console.log(checkEvery);
+// console.log(checkEvery);
+
+// map: duyệt qua toàn bộ các phần tử trong mảng
+// trả về 1 mảng mới chứa các phần tử trong return
+
+const newTrElements = data.map((item,index)=>{
+    return `
+        <tr>
+            <th scope="row">${index+1}</th>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${item.gender ? "Nam": "Nữ"}</td>
+            <td>${item.mark}</td>
+        </tr>
+    `
+}).join('');// join: chuyển mảng -> chuỗi
+
+console.log(newTrElements);
+tbodyElement.innerHTML = newTrElements
+
 
 
