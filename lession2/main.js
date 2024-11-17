@@ -129,7 +129,7 @@ var obj2 = {
     name: "chinhpd6"
 }
 
-var newObj = {...obj1, ...obj2}
+var newObj = {...obj1, ...obj2} // spread
 // console.log(newObj);
 
 var a = 1; // number -> Biến tham trị
