@@ -38,9 +38,27 @@ var data = [
 ]
 
 // forEach: duyệt qua toàn bộ các phần tử trong mảng
-
+// giá trị lưu trữ
+let trElements = '';
+// duyệt qua mảng data sử dụng forEach
 data.forEach((item,index)=>{
-    console.log(item); //giá trị các phần tử trong mảng data qua mỗi lần lặp
+    // console.log(item); //giá trị các phần tử trong mảng data qua mỗi lần lặp
     // console.log(index); // vị trí các phần tử trong mảng
-    
+    // nối chuỗi trElements +=
+    // sử dụng `` -> có thể sử ${}
+    trElements += `
+        <tr>
+            <th scope="row">${index+1}</th>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${item.gender ? "Nam": "Nữ"}</td>
+            <td>${item.mark}</td>
+        </tr>
+    `
 })
+
+// console.log(trElements);
+// lấy ra phần tử tbody
+const tbodyElement = document.querySelector('tbody');
+// gán vào tbody qua phương thức innerHTML
+tbodyElement.innerHTML = trElements
