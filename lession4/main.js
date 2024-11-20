@@ -164,7 +164,33 @@ function doingPromise(){
         .finally() // có thể có hoặc không
 }
 
-doingPromise();
+// doingPromise();
+
+
+//async await
+async function doingAsync (){
+    try {
+        console.log("Bắt đầu");
+        const data = await delay2(1000); // promise
+        console.log(data);
+        console.log("Kết thúc");
+        // ===========
+        console.log("Bắt đầu 2");
+        const data2 = await delay2(1000); // promise
+        console.log(data2);
+        console.log("Kết thúc 2");
+
+        // ===========
+        console.log("Bắt đầu 3");
+        const data3 = await delay2(1000); // promise
+        console.log(data2);
+        console.log("Kết thúc 3");
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+doingAsync();
 
 
 
