@@ -94,7 +94,77 @@ function doingCallback (){
     })
 }
 
-doingCallback();
-// call hell
+// doingCallback();
+// callback hell
+
+
+// Promise : lời hứa
+
+// const myPromise = new Promise((resolve, reject)=>{
+//     const isCheck = true;
+//     if(isCheck){
+//         resolve("Thành công")
+//     }else{
+//         reject("Thất bại")
+//     }
+// })
+
+// myPromise
+//     .then((data)=>{
+//         console.log(data);
+//         return myPromise; // thực thi ở then tiếp theo
+//     }) // được thực thi khi resolve gọi
+//     .then((data2)=>{
+//         console.log(data2);
+//     })
+//     .catch((err)=>{
+//         console.log(err);
+//     }) // được thực thi khi reject gọi
+//     .finally(()=>{
+//         console.log("Kết thúc");
+//     })
+
+// fake tác vụ bất đồng bộ 
+const delay2 = (ms)=>{
+    return new Promise((resolve,reject)=>{
+        const isCheck = true;
+        setTimeout(()=>{
+            if(isCheck){
+                resolve("Waiting")
+            }else{
+                reject("Thất bại")
+            }
+        },ms)
+    })
+}
+
+function doingPromise(){
+    console.log("Bắt đầu");
+    delay2(1500)
+        .then((res)=>{
+            console.log(res);
+            console.log("Kết thúc");
+            // ==============
+            console.log("Bắt đầu 2");
+            return delay2(2000);// nếu trả về 1 promise -> thực thi ở then tiếp theo
+        })
+        .then((res)=>{
+            console.log(res);
+            console.log("Kết thúc 2");
+
+            // ==============
+            console.log("Bắt đầu 3");
+            return delay2(3000); // nếu delay2(3000) lỗi -> thực thi .catch
+        })
+        .then((res)=>{
+            console.log(res);
+            console.log("Kết thúc 3");
+        })
+        .catch(err => console.log(err))
+        .finally() // có thể có hoặc không
+}
+
+doingPromise();
+
 
 
