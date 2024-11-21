@@ -178,4 +178,26 @@ function doingPromise(){
         .finally()// có thể có hoặc k (sau khi xử lý thành công hoặc thất bại-> finally)
 }
 
-doingPromise();
+// doingPromise();
+
+// async / await
+
+async function doingAsync(){
+    try {
+        console.log("Bắt đầu");
+        const data = await delayPromise(1000); // tác vụ bất đồng bộ cần xử lý
+        console.log(data);
+        console.log("Kết thúc");
+
+        //===============
+        console.log("Bắt đầu 2");
+        const data2 = await delayPromise(1000); 
+        console.log(data2);
+        console.log("Kết thúc 2");
+    } catch (error) {
+        console.log(error); // bắt lỗi
+    }
+    
+}
+
+doingAsync();
