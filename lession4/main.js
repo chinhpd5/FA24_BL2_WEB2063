@@ -1,8 +1,9 @@
 // Xử lý Bất đồng bộ trong JS
 
 // Js là ngôn ngữ đơn luồng (Đồng bộ)
-// Tại 1 số trường hợp (callapi(fetch,axios,..), timer(setTimeout,setInterval), 
+// Tại 1 số trường hợp (callapi(fetch,axios,..), timer(setTimeout,setInterval), promise
 // lấy dữ liệu từ file, từ DB, xử lý sự kiên (load,click)) -> JS xử lý Bất đồng bộ
+
 
 // console.log(1);
 // console.log(2);
@@ -111,4 +112,70 @@ function doingCallback (){
 }
 // callback hell
 
-doingCallback()
+// doingCallback()
+
+// promise: lời hứa
+// const myPromise = new Promise((resolve, reject)=>{
+//     const isCheck = false;
+//     if(isCheck){
+//         resolve('Thành công')
+//     }else{
+//         reject('Thất bại')
+//     }
+// })
+
+// myPromise
+//     .then((data)=>{
+//         console.log(data);
+//     })
+//     .catch((err)=>{
+//         console.log(err);
+//     })
+//     .finally(()=>{
+//         console.log("Hoàn thành");
+//     })
+
+// Sử dụng Promise để xử lý BĐB
+
+// sử dụng promise để fake ra tác vụ bất đồng bộ
+
+function delayPromise(ms){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            const isCheck = true;
+            if(isCheck){
+                resolve('Waiting')
+            }else{
+                reject("Thất bại")
+            }
+        },ms)
+    })
+}
+
+function doingPromise(){
+    console.log("Bắt đầu");
+    delayPromise(1000)
+        .then(res=>{
+            console.log(res);
+            console.log("Kết thúc");
+
+            //===
+            console.log("Bắt đầu 2");
+            return delayPromise(1500);// thực thi ở .then tiếp theo
+        })
+        .then(data=>{
+            console.log(data);
+            console.log("Kết thúc 2");
+             //===
+             console.log("Bắt đầu 3");
+             return delayPromise(1500);// nếu có xảy ra lỗi (reject)-> chuyển để .catch
+        })
+        .then(data=>{
+            console.log(data);
+            console.log("Kết thúc 3");
+        })
+        .catch(err=> console.log(err))
+        .finally()// có thể có hoặc k (sau khi xử lý thành công hoặc thất bại-> finally)
+}
+
+doingPromise();
