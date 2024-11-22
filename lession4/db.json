@@ -1,0 +1,15 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "name": "Sản phẩm 1",
+        "quantity": 10
+      },
+      {
+        "id": "cyu2",
+        "name": "sản phẩm 4",
+        "quantity": 40,
+        "image": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/ip16-xanh-mong-ket.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;"
+      }
+    ]
+  }
