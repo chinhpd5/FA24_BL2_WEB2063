@@ -1,3 +1,4 @@
+// promise
 const getListProduct = ()=>{
     // call api để lấy danh sách sản phẩm
     fetch(`http://localhost:3000/products`)// ,{method:'get'} mặc định (method= 'get')
@@ -69,7 +70,7 @@ const deleteProduct = ()=>{
     })
 }
 
-// async
+// async/await
 
 const getListProductAsync = async ()=>{
     try {
