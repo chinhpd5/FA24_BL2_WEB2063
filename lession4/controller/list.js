@@ -14,7 +14,7 @@ function getListProduct (){
             return res.json();// được thực thi trong then tiếp
         })
         .then((data)=>{
-            console.log(data);
+            // console.log(data);
             // b2: đổ dữ liệu ra table
             const trElements = data?.map((item,index)=>{
                 return `
@@ -25,11 +25,12 @@ function getListProduct (){
                         <td><img style="height:70px" src="${item.image}" alt=""></td>
                         <td>
                             <button data-id="${item.id}" class="btn-delete btn btn-danger">Xóa</button>
+                            <a href="edit.html?id=${item.id}" class="btn btn-warning">Sửa</a>
                         </td>
                     </tr>
                 `
             }).join('');// join: chuyển mảng -> chuỗi
-            console.log(trElements);
+            // console.log(trElements);
             
             const tbodyElement = document.querySelector('tbody');
             tbodyElement.innerHTML = trElements;
