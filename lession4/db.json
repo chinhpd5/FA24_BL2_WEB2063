@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "Sản phẩm 1 udpate",
+      "quantity": 10123,
+      "image": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/ip16-xanh-mong-ket.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;",
+      "id": "1"
+    },
+    {
+      "name": "sản phẩm 4 update",
+      "quantity": 40,
+      "image": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/ip16-xanh-mong-ket.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;",
+      "id": "cyu2"
+    },
+    {
+      "id": "ec33",
+      "name": "sản phẩm 3",
+      "quantity": 100,
+      "image": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/iphone-16-pro-sa-mac-1.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;"
+    },
+    {
+      "id": "bf86",
+      "name": "chinhpd5 new",
+      "quantity": 1,
+      "image": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/ip16-xanh-mong-ket.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;"
+    }
+  ]
+}
