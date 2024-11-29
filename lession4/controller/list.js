@@ -11,7 +11,7 @@ const getListProduct = ()=>{
    
     fetch(`http://localhost:3000/products`)// mặc định ,{method:'get'}
         .then((response)=>{
-            console.log(response);
+            // console.log(response);
             return response.json();// trả về data // thực thi tại then tiếp
         })
         .then((data)=>{ // mảng dữ liệu product từ db
@@ -26,7 +26,7 @@ const getListProduct = ()=>{
                         <td><img style="height: 70px" src="${item.image}" alt=""></td>
                         <td>
                             <button data-id="${item.id}" class="btn-delete btn btn-danger">Xóa</button>
-
+                            <a class="btn btn-warning" href="edit.html?id=${item.id}">Sửa</a>
                         </td>
                     </tr>
                 `
