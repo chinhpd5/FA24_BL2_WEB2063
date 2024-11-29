@@ -17,11 +17,12 @@ const getListProduct = ()=>{
                         <td><img style="height:70px" src="${item.image}" alt=""></td>
                         <td>
                             <button data-id="${item.id}" class="btn-delete btn btn-danger">Xóa</button>
+                            <a href="edit.html?id=${item.id}" class="btn btn-warning">Sửa</a>
                         </td>
                     </tr>
                 `
             }).join('');// join: chuyển mảng -> chuỗi
-            console.log(trElements);
+            // console.log(trElements);
             // Đổ dữ liệu ra table
             const tbodyElement = document.querySelector('tbody');
             tbodyElement.innerHTML = trElements;
