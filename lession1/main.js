@@ -1,134 +1,155 @@
-// Biến trong JS
+// Biến var let const
 
-// 1. camelCase
-var myName; // ưu tiên sử dụng
+const PI = 3.14;
+// PI = 3;
 
-// 2. PascalCase
-var MyName;
+// var let
 
-// let var const
+// PascalCase
+var MyName = "chinhpd5";
 
-const PI= 3.14;// cần định nghĩa giá cho biến const
-// PI = 3;// KHÔNG được gán lại giá trị cho const
+// camelCase (sử dụng)
+var myName = 'chinhpd5';
 
-// var và let
+var name= "chinh";
+var name= 'Nam';
 
-var myName = "chinhpd5";
-var myName = "chinhpd6";
-// console.log(myName);
+let age= 30;
+age= 31;
 
-let myHome = "Hà Nội";
-myHome = "Hà Nam";
-
-// phạm vi : scope
-// 1. global scope
-
-let mySchool = 'FPoly'; // phạm vi global
-// var và let giống nhau
-
-if(true){
-    // console.log(mySchool);
-}
-
-// 2. block scope (if else, switch case, for)
-
+// Phạm vi (Scope)
+// Global scope
+let a = 30; // var, let giống nhau: có thể truy cập từ phạm vi global
 {
-    var myLove = "Mai";// var có thể nhận lại từ bên ngoài phạm vi block
-    let myLove2 = "Hồng";// let KHÔNG thể nhận lại từ bên ngoài phaaamjvi block
+    // block
+    // console.log(a);
 }
 
-// console.log(myLove);
-// console.log(myLove2);
-
-// 3. local scope(function)
-function test(){
-    let myLove3 = "Bích";
-    //var hoặc let: KHÔNG thể truy xuất biến bên ngoài local scope(function)
+// Blcok scope (if else, for,...)
+{
+    var b = 20; // var: có thể nhận bên ngoài block scope
+    let c = 10; // let: KHÔNG thể nhận bên ngoài block scope
 }
 
-// console.log(myLove3);
+// console.log(b);
+// console.log(c);
 
-//Kiểu dữ liệu trong JS
+// local scope (function)
+function localScope(){
+    var d = 5; // var và let đều không thể truy xuất từ bên ngoài local scope
+}
+
+// console.log(d);
+
+// Kiểu dữ liệu trong JS:
 /**
  * 1. Kiểu dữ liệu nguyên thủy
- * - string: '' "" ``(template string)
- * - number: 1 -1 1.4
- * - boolean: true false
- * - undefined
- * - null
- * - BigInt
- * - Symbol
+ * number: 1, -2, 2.5
+ * string: '' "" ``
+ * boolean: true false
+ * null: var a = null
+ * undefined: var b;
+ * 
+ * symbol
+ * bigInt
  * 
  * 2. Kiểu dữ liệu phức tạp
- * - array []
- * - object {}
+ * array: [1,2,3,"a","b"]
+ * object: {
+ *  name: "chinhpd5",
+ *  age: 20
+ * }
  */
 
 // Toán tử trong JS
 /**
- * Toán tử số học: +- * / % ** ,...
- * Toán tử gán: = += -= (i -=10 <=> i = i =10), ....
- * Toán tử so sánh: > < >= <= == != ===
- * Toán tử logic: ! && ||
+ * 1. Toán tử so sánh: > < >= <= == != === (so sánh giá trị và kiểu dữ liệu)
+ * 2. Toán tử gán: = ,+= (ví dụ: i +=2 <=> i = i+2), -=, /=,*=,...
+ * 3. Toán tử logic: && || !
+ * 4. Toán tử số học: + - * / % ....
  */
 
-// Biểu thức điều kiện: if else, switch case, toán tử 3 ngôi
-// Vòng lặp
-// 1 chưa biết số lần lặp : while, do while
-// 2. Biết trước: for, for of, for in, forEach
+// Cú pháp
+// Biểu thức điều kiện
+// if else, switch case, toán tử 3 ngôi
 
-// DOM ?
-// Document Object Model: Mô hình đối tượng tài liệu
+let result = (1 != true) ? 'Đúng' : 'Sai';
 
-// Element
+// console.log(result);
 
+// vòng lặp
+
+// biết trước số lần lặp
+// for, forEach, for of, for in
+
+// Không biết trước số lần lặp
+// while, do while
+
+
+// DOM (Document Object Model): Mô hình đối tượng tài liệu
+// Khi 1 website tải thì khởi tạo DOM của trang đó:
 /**
- * id class tag
+ * Element
+ * Attribute
+ * Text
+ */
+
+// 1. Element
+/***
+ * id, class, tag
  * css selector
  */
 
-// getElementById -> trả về 1 phần tử duy nhất đầu tiên tìm thấy
-var h1Element = document.getElementById('heading');
+/**
+ * createElement
+ * removeElement
+ */
+
+
+var h1Element = document.getElementById('title');// trả về 1 phần tử đầu tiên tìm thấy
 // console.log(h1Element);
 
-// getElementsByClassName-> trả về HTMLCollection (Mảng)
-var classElements = document.getElementsByClassName('paragragh');
-// console.log(classElements);
+var h1Elements = document.getElementsByClassName('paragraph'); // trả về 1 mảng(HTML Collection)
+h1Elements = document.getElementsByTagName('p');// trả về 1 mảng(HTML Collection)
+// console.log(h1Elements);
 
-// getElementsByTagName-> trả về HTMLCollection (Mảng)
-var tagElements = document.getElementsByTagName('p');
-// console.log(tagElements);
+var element = document.querySelector('#title');//#: id trả về 1 phần tử đầu tiên tìm thấy
+element = document.querySelector('.paragraph'); // . : class
+element = document.querySelector('p'); //  : tag
+// console.log(element);
 
-// css selector
-// querySelector -> trả về phần tử đầu tiên tìm thấy
-h1Element = document.querySelector('#heading');// id: #
-var pElement = document.querySelector('.paragragh'); // class : .
-pElement = document.querySelector('body p'); // tag: 
-// console.log(pElement);
+var elements = document.querySelectorAll('.paragraph'); // trả về 1 mảng (NodeList) chứa tất cả các phần tử được tìm thấy
+// console.log(elements);
 
-// querySelectorAll -> trả về 1 NodeList(Mảng)
-var pElements = document.querySelectorAll('p.paragragh');
+// tìm hiểu sự khác nhau của HTMLCollection và NodeList
 
-// console.log(pElements);
-// tìm hiểu sự khác nhau giữa HTMLCollection và NodeList
+// 2 Attribute
 
-// Attribute
-h1Element = document.querySelector('#heading');// id: #
-h1Element.style.color = 'red'
-// h1Element.data = "chinhpd5"
 
-h1Element.setAttribute("data", "chinhpd5");
-// console.log(h1Element.getAttribute('data'));
+var elementH1 = document.querySelector('#title');
+elementH1.id = "new-title";
+elementH1.style.color = 'red';
+
+elementH1.setAttribute("data","chinhpd5");
+var getEle = elementH1.getAttribute('data');
+// console.log(getEle);
 
 // Text
 
-// console.log(h1Element.innerHTML);
-// console.log(h1Element.innerText);
-// console.log(h1Element.textContent);
+let text1 = elementH1.textContent;
+let text2 = elementH1.innerText;
+
+// console.log(text1);
+// console.log(text2);
+
+// elementH1.textContent = 'new chinhpd5'
+// elementH1.innerText = '<i>new chinhpd5</i>'
+elementH1.innerHTML = '<i>new chinhpd5</i>'
 
 
-h1Element.innerHTML= "<i>chinhpd5</i>"
 
-// Làm việc với DOM là làm việc với (element attribute text) - thêm sửa xóa 
+
+
+
 
 
