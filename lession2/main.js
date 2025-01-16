@@ -43,7 +43,7 @@ const [a,,c] = myArray;
 // // console.log(b);
 // console.log(c);
 
-// objetc
+// object
 
 const myObject = {
   name: "chinhpd5",
@@ -74,5 +74,39 @@ function showInfo1({name,age,child: {name : childName}}){
   console.log(age);
   console.log(childName); // chinhpd6
 }
+
+// Rest ... (Phần còn lại)
+
+const myArray1 = [1,2,3,4,5];
+const [first,...rest] = myArray1;
+
+// console.log(first); // 1
+// console.log(rest); // [2,3,4,5]
+
+function sum1 (a,...rest){
+  // let total = 0;
+  rest.forEach((item)=>{
+    a += item 
+  })
+  console.log(a);
+}
+
+// sum1(1,2,3,4,5)
+// sum1(1,2,3,4,5,6,7,8,9)
+
+const myObject1 = {
+  name: "chinhpd5",
+  age: 20,
+  child: {
+    name: "chinhpd6",
+    age: 10
+  }
+}
+
+var {name,...newObj} = myObject1;
+
+console.log(name);
+console.log(newObj);
+
 
 
