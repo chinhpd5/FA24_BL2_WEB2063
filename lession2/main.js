@@ -105,8 +105,74 @@ const myObject1 = {
 
 var {name,...newObj} = myObject1;
 
-console.log(name);
-console.log(newObj);
+// console.log(name);
+// console.log(newObj);
 
+// spread ... (phân rã)
+
+var arr1 = [1,2,3]
+var arr2 = [4,5,6]
+
+// [1,2,3,4,5,6]
+
+// console.log(arr1.concat(arr2));
+
+const newArr = [...arr1, ...arr2];
+
+// console.log(newArr);
+
+const myObject2 = {
+  name: "chinhpd5",
+  age: 20,
+  child: {
+    name: "chinhpd6",
+    age: 10
+  }
+}
+
+const newInfo ={
+  ...myObject2, // spread
+  home: "Hà Nội" 
+}
+
+// console.log(newInfo);
+// copy
+
+var x = 1;
+var y = x; // 1
+x = 2;
+
+// console.log(x); // 2
+// console.log(y); // 1
+
+var x = {value: 1}; // object -> biến tham chiếu
+var y = x;// gán vị trí nhớ của x cho y
+
+x.value = 2; // khi x thay đổi thì y cũng thay đổi theo do cùng trỏ đến 1 địa chỉ ô nhớ
+
+// console.log(x); // 2
+// console.log(y); // 2
+
+
+// Biến tham trị (number, string, boolean)
+
+/**
+ * Khi biến có kiểu (number, string, boolean)
+ * Khi gắn 1 biến cho 1 biến khác gán "GIÁ TRỊ"
+ * 
+ */
+
+// Biến tham chiếu (array, object)
+/**
+ * Khi biến có kiểu (array, object)
+ * Khi gán biến cho biến khác, biến tham chiếu (gán vị trị nhớ) cho biến kia
+ */
+
+var x = {value : 1};
+var y = {...x} // spread
+
+x.value = 2;
+console.log(x);
+console.log(y);
 
 
