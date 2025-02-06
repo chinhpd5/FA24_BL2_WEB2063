@@ -58,4 +58,18 @@ data.forEach((item,index)=>{
 const trBodyElement = document.querySelector('tbody');
 trBodyElement.innerHTML = trElement;
 
+// find: duyệt qua mảng và trả về phần đầu tiên thỏa mãn điều kiện (return)
+// nếu có ít nhất 1 phần tử thỏa mãn đk -> trả về phần tử đó và kết thúc vòng lặp
+// nếu không có phần tử nào -> trả về undefined
+// tìm kiếm 1 sinh viên có tuổi nhỏ hơn 20
+
+const findItem = data.find((item,index )=>{
+  console.log(index);
+  // return item.mark == 8
+  // return item.mark > 10
+  return !item.gender
+})
+
+console.log(findItem);
+
 
