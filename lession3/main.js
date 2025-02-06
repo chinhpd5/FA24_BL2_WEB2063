@@ -56,8 +56,8 @@ data.forEach((item,index)=>{
 
 // console.log(trElement);
 
-const trBodyElement = document.querySelector('tbody');
-trBodyElement.innerHTML = trElement;
+// const trBodyElement = document.querySelector('tbody');
+// trBodyElement.innerHTML = trElement;
 
 // find: duyệt qua mảng và trả về phần đầu tiên thỏa mãn điều kiện (return)
 // nếu có ít nhất 1 phần tử thỏa mãn đk -> trả về phần tử đó và kết thúc vòng lặp
@@ -92,13 +92,47 @@ const checkSome = data.some((item,index)=>{
 // Nếu có ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> false -> kết thúc vòng lặp
 
 const checkEvery = data.every((item,index)=>{
-  console.log(index);
+  // console.log(index);
   
   // return item.age > 15
   return item.mark > 5
 })
 
-console.log(checkEvery);
+// console.log(checkEvery);
+
+
+
+// filter: duyệt qua toàn bộ phần tử trong mảng
+// trả về mảng mới chứa các phần tử thỏa mãn đk (return)
+
+const filterElement = data.filter((item,index)=>{
+  // return !item.gender
+  return item.mark >= 5
+})
+
+console.log(filterElement);
+
+
+// map: duyệt qua toàn bộ phần tử trong mảng
+// trả về mảng mới thông return
+
+const trMap = filterElement.map((item,index)=>{
+  return `
+    <tr>
+      <th scope="row">${index+1}</th>
+      <td>${item.name}</td>
+      <td>${(item.gender ? 'Nam': 'Nữ')}</td>
+      <td>${item.mark}</td>
+      <td>${item.age}</td>
+    </tr>
+  `
+}).join('') // join chuyển mảng -> chuỗi
+
+// console.log(trMap);
+const trBodyElementMap = document.querySelector('tbody');
+trBodyElementMap.innerHTML = trMap;
+
+
 
 
 
