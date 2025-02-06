@@ -49,6 +49,7 @@ data.forEach((item,index)=>{
       <td>${item.name}</td>
       <td>${(item.gender ? 'Nam': 'Nữ')}</td>
       <td>${item.mark}</td>
+      <td>${item.age}</td>
     </tr>
   `;
 })
@@ -64,12 +65,40 @@ trBodyElement.innerHTML = trElement;
 // tìm kiếm 1 sinh viên có tuổi nhỏ hơn 20
 
 const findItem = data.find((item,index )=>{
-  console.log(index);
+  // console.log(index);
   // return item.mark == 8
   // return item.mark > 10
+  // return !item.gender
+  return item.age < 20
+})
+
+// console.log(findItem);
+
+// some: duyệt qua mảng trả về giá trị boolean
+// Nếu có ít nhất 1 phần tử thỏa mãn ĐK (return) -> true -> kết thúc vòng lặp
+// Nếu tất cả KHÔNG thỏa mãn ĐK -> false
+
+const checkSome = data.some((item,index)=>{
+  // console.log(index);
+  
+  // return item.mark < 4
   return !item.gender
 })
 
-console.log(findItem);
+// console.log(checkSome);
+
+// every: duyệt qua mảng trả về giá trị boolean
+// nếu toàn bộ phần tử trong mảng thỏa mãn ĐK -> true
+// Nếu có ít nhất 1 phần tử KHÔNG thỏa mãn ĐK -> false -> kết thúc vòng lặp
+
+const checkEvery = data.every((item,index)=>{
+  console.log(index);
+  
+  // return item.age > 15
+  return item.mark > 5
+})
+
+console.log(checkEvery);
+
 
 
