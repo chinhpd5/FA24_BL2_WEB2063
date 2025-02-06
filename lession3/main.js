@@ -116,7 +116,7 @@ console.log(filterElement);
 // map: duyệt qua toàn bộ phần tử trong mảng
 // trả về mảng mới thông return
 
-const trMap = filterElement.map((item,index)=>{
+const trMap = data.map((item,index)=>{
   return `
     <tr>
       <th scope="row">${index+1}</th>
@@ -131,6 +131,45 @@ const trMap = filterElement.map((item,index)=>{
 // console.log(trMap);
 const trBodyElementMap = document.querySelector('tbody');
 trBodyElementMap.innerHTML = trMap;
+
+
+// reduce
+/**
+ * callback(preValue,item,index)
+ * + preValue: giá trị lưu trữ qua các lần lặp
+ * + item: giá trị các phần tử tại thời điểm lặp
+ * + index: vị trí 
+ * initValue: giá trị khởi tạo cho preValue
+ */
+
+const initValue = 0;
+const total = data.reduce((preValue,item,index)=>{
+  return preValue += item.mark;
+},initValue)
+
+console.log(total);
+
+// ví dụ 2: tìm điểm max của mảng data
+// let max = data[0].mark;
+
+// data.forEach((item)=>{
+//   if(item.mark > max)
+//     max= item.mark
+// })
+
+// console.log(max);
+
+let maxMark = data.reduce((preValue,item)=>{
+  return (item.mark > preValue ? item.mark : preValue)
+},data[0].mark)
+
+console.log(maxMark);
+
+let minMark = data.reduce((preValue,item)=>{
+  return (item.mark < preValue ? item.mark : preValue)
+},data[0].mark)
+
+console.log(minMark);
 
 
 
