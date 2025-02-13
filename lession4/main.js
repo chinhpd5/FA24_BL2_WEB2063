@@ -147,5 +147,29 @@ function doingPromise(){
   
 }
 
-doingPromise();
+// doingPromise();
 // async/await
+
+async function doingAsync(){
+  try {
+    console.log("Bắt đầu");
+    var data = await delay(2000); // tác vụ bất đồng bộ
+    console.log(data);
+    console.log("Kết thúc");
+
+    console.log("Bắt đầu 2");
+    var data = await delay(2000); // tác vụ bất đồng bộ
+    console.log(data);
+    console.log("Kết thúc2");
+
+    console.log("Bắt đầu 3");
+    var data = await delay(1000); // tác vụ bất đồng bộ
+    console.log(data);
+    console.log("Kết thúc 3");
+  } catch (error) {
+    console.log(error);
+  }
+  
+}
+
+doingAsync()
