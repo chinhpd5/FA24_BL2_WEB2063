@@ -74,14 +74,78 @@ function doingCallback() {
         console.log(data);
         console.log("Kết thúc 3");
   
-        
       })      
     })
   })
 
 }
 
-doingCallback()
+// doingCallback()
 
-// promise
+// callback hell -> promise
+
+// promise (Lời hứa: Thành công/ Thất hứa)
+
+// const myPromise = new Promise((resolve, reject)=>{
+//   const isCheck = false
+//   if(isCheck){
+//     resolve("Thành công")
+//   }else{
+//     reject("Thất bại")
+//   }
+// })
+
+// myPromise
+//   .then((data)=>{
+//     console.log(data);
+//   })
+//   .catch((err)=>{
+//     console.log(err);
+//   })
+//   .finally(()=>{
+//     console.log("Kết thúc");
+//   })
+
+function delay(ms){
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      const isCheck= true
+      if(isCheck){
+        resolve("Thực thi")
+      }else{
+        reject("Thất bại")
+      }
+    },ms)
+  })
+}
+
+function doingPromise(){
+  console.log("Bắt đầu 1");
+  delay(1000)
+    .then((data)=>{
+      console.log(data);
+      console.log("Kết thúc 1");
+
+      console.log("Bắt đầu 2");
+      return delay(2000); // nếu return về promise thực thi trong then tiếp theo
+    })
+    .then((data)=>{
+      console.log(data);
+      console.log("Kết thúc 2");
+
+      console.log("Bắt đầu 3");
+      return delay(2300); // nếu reject(lỗi) -> không vào then tiếp theo -> chuyển thẳng đến catch
+    })
+    .then((data)=>{
+      console.log(data);
+      console.log("Kết thúc 3");
+
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  
+}
+
+doingPromise();
 // async/await
