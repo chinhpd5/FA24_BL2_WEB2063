@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "name": "Sản phẩm 1 update",
+      "price": "10002",
+      "imageURL": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/iphone-16-pro-sa-mac-1.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;",
+      "category": "Danh mục 2",
+      "id": 1
+    },
+    {
+      "name": "sản phẩm 2",
+      "price": "2000",
+      "imageURL": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/iphone-16-pro-sa-mac-1.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;",
+      "category": "Danh mục 3",
+      "id": 2
+    }
+  ]
+}
